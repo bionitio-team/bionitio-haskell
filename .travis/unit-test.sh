@@ -4,7 +4,6 @@ set -e
 errors=0
 
 TOP_DIR=`pwd`
-cd haskell 
 
 # Run unit tests
 stack test > /dev/null 2>&1 || {
