@@ -7,6 +7,6 @@ before_install:
   - ./.travis/install-dependencies.sh  
 
 script:
-  - functional_tests/test.sh ~/.local/bin/bionitio-hs
+  - ./functional_tests/bionitio-test.sh -p ~/.local/bin/bionitio-hs -d functional_tests/test_data
   - ./.travis/unit-test.sh
 
