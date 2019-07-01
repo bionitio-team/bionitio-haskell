@@ -1,7 +1,11 @@
-FROM haskell:8.4.3
+FROM ubuntu:18.04 
 WORKDIR /bionitio
 COPY . .
 
 # RUN stack install --resolver ghc-8.4.3
+
+RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 575159689BEFB442
+RUN echo 'deb http://download.fpcomplete.com/ubuntu precise main' | sudo tee /etc/apt/sources.list.d/fpco.list
+RUN sudo apt-get update && sudo apt-get install stack -y
 RUN stack setup
 RUN stack install 
