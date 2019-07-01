@@ -1,4 +1,4 @@
-FROM haskell:8 
+FROM haskell:7 
 WORKDIR /bionitio
 
 RUN cabal new-update
