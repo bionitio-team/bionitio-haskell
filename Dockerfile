@@ -9,5 +9,5 @@ RUN cabal install --only-dependencies -j4
 
 COPY . /bionitio
 
-RUN cabal install bionitio-hs
+RUN cabal install 
 ENTRYPOINT ["bionitio"]
