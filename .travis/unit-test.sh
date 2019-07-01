@@ -6,8 +6,10 @@ errors=0
 TOP_DIR=`pwd`
 
 # Run unit tests
-stack test > /dev/null 2>&1 || {
-    echo "'stack test' failed"
+cabal test > /dev/null 2>&1 || {
+#stack test > /dev/null 2>&1 || {
+    #echo "'stack test' failed"
+    echo "'cabal test' failed"
     let errors+=1
 }
 

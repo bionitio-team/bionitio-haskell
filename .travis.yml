@@ -14,6 +14,6 @@ script:
 #  - ./.travis/unit-test.sh
 
   # Both of these same tests, in Docker
-  #  - docker run --entrypoint /bionitio/.travis/unit-test.sh bionitio-haskell
+  - docker run --entrypoint /bionitio/.travis/unit-test.sh bionitio-haskell
   - docker run --entrypoint /bionitio/functional_tests/bionitio-test.sh bionitio-haskell -p bionitio-hs -d /bionitio/functional_tests/test_data
 
