@@ -1,7 +1,7 @@
 FROM haskell:7 
 WORKDIR /bionitio
 
-RUN apt-get install hlint
+RUN apt-get update && apt-get install hlint
 RUN cabal update
 
 COPY ./bionitio-hs.cabal /bionitio/bionitio-hs.cabal
