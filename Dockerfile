@@ -2,5 +2,4 @@ FROM haskell:8
 WORKDIR /bionitio
 COPY . .
 
-RUN stack setup
-RUN stack install 
+RUN stack install --resolver ghc-8.4.3
