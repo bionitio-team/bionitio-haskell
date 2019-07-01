@@ -3,15 +3,15 @@ dist: trusty
 services:
   - docker
 
-language: haskell
+#language: haskell
 
 before_install:
-  - ./.travis/install-dependencies.sh  
+#  - ./.travis/install-dependencies.sh  
   - docker build -t bionitio-haskell .
 
 script:
-  - ./functional_tests/bionitio-test.sh -p ~/.local/bin/bionitio-hs -d functional_tests/test_data
-  - ./.travis/unit-test.sh
+#  - ./functional_tests/bionitio-test.sh -p ~/.local/bin/bionitio-hs -d functional_tests/test_data
+#  - ./.travis/unit-test.sh
 
   # Both of these same tests, in Docker
   - docker run --entrypoint /bionitio/.travis/unit-test.sh bionitio-haskell
