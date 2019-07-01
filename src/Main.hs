@@ -25,7 +25,8 @@ import Bio.Sequence.Fasta
 import Options.Applicative 
    (Parser, ParserInfo (infoFailureCode), option, auto, long, short,
    metavar, help, value, many, argument, str, info, execParser, switch,
-   fullDesc, (<*>), (<$>), (<>), helper, progDesc, optional, strOption)
+   fullDesc, (<*>), (<$>), helper, progDesc, optional, strOption)
+import Data.Monoid ((<>))
 import Data.List
    (intercalate)
 import Control.Exception
