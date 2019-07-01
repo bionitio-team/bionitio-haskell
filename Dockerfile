@@ -1,13 +1,13 @@
 FROM haskell:8 
 WORKDIR /bionitio
 
-RUN cabal update
+RUN cabal new-update
 
 COPY ./bionitio-hs.cabal /bionitio/bionitio-hs.cabal
 
-RUN cabal install --only-dependencies -j4
+RUN cabal new-install --only-dependencies -j4
 
 COPY . /bionitio
 
-RUN cabal install 
+RUN cabal new-install exe:bionitio-hs
 ENTRYPOINT ["bionitio"]
