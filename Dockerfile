@@ -1,11 +1,13 @@
 FROM haskell:8 
 WORKDIR /bionitio
-COPY . .
 
-# RUN stack install --resolver ghc-8.4.3
+RUN cabal update
 
-# RUN cabal update && cabal install pandoc pandoc-citeproc
-RUN pwd
-RUN ls -la
-RUN cabal new-update && cabal new-install
-#ENTRYPOINT ["pandoc"]
+COPY ./bionitio-hs.cabal /bionitio/bionitio-hs.cabal
+
+RUN cabal-new install --only-dependencies -j4
+
+COPY . /bionitio
+
+RUN cabal new-install
+ENTRYPOINT ["bionitio"]
