@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install hlint -y
 COPY . /bionitio
 
 RUN stack install 
-ENTRYPOINT ["bionitio"]
+ENTRYPOINT ["/root/.local/bin/bionitio"]
