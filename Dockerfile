@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install hlint -y
 COPY . /bionitio
 RUN stack install 
 
-RUN which bionitio
-RUN env 
-
-ENTRYPOINT ["/root/.local/bin/bionitio"]
+# Executable is installed into /root/.local/bin.
+# The parent Docker puts this directory into the PATH
+ENTRYPOINT ["bionitio"]
