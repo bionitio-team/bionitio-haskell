@@ -5,6 +5,8 @@ RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://ar
 RUN apt-get update && apt-get install hlint -y
 
 COPY . /bionitio
-
 RUN stack install 
+
+RUN which bionitio
+
 ENTRYPOINT ["/root/.local/bin/bionitio"]
