@@ -8,5 +8,6 @@ COPY . /bionitio
 RUN stack install 
 
 RUN which bionitio
+RUN env 
 
 ENTRYPOINT ["/root/.local/bin/bionitio"]
