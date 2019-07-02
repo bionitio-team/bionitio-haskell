@@ -6,7 +6,5 @@ RUN apt-get update && apt-get install hlint -y
 
 COPY . /bionitio
 
-RUN which bionitio
-
 RUN stack install 
 ENTRYPOINT ["/root/.local/bin/bionitio"]
