@@ -2,6 +2,7 @@ sudo: true
 dist: trusty
 services:
   - docker
+language: python
 python:
   - "3.4"
 
