@@ -9,4 +9,3 @@ RUN stack install
 
 # Executable is installed into /root/.local/bin.
 # The parent Docker puts this directory into the PATH
-ENTRYPOINT ["bionitio"]
