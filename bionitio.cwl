@@ -23,4 +23,4 @@ outputs:
     type: stdout
 requirements:
   - class: DockerRequirement
-    dockerPull: bionitio-haskell
+    dockerPull: bionitio
