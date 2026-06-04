@@ -3,10 +3,7 @@ WORKDIR /bionitio
 
 # The Jessie CA bundle is too old to verify GitHub's current certificate.
 # Download the current Mozilla CA bundle so stack can reach raw.githubusercontent.com.
-RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main" > /etc/apt/sources.list && \
-    apt-get -o Acquire::Check-Valid-Until=false update && \
-    apt-get install -y wget && \
-    wget --no-check-certificate -O /usr/local/share/ca-certificates/mozilla.crt https://curl.se/ca/cacert.pem && \
+RUN curl --insecure -L -o /usr/local/share/ca-certificates/mozilla.crt https://curl.se/ca/cacert.pem && \
     update-ca-certificates
 
 COPY . /bionitio
