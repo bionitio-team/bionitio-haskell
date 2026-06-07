@@ -1,11 +1,9 @@
-FROM haskell:7.10
+FROM haskell:9.6
 WORKDIR /bionitio
 
-RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
-RUN apt-get update && apt-get install hlint -y
-
 COPY . /bionitio
-RUN stack install 
+RUN stack install --install-ghc
+RUN stack install hlint --install-ghc
 
 # Executable is installed into /root/.local/bin.
 # The parent Docker puts this directory into the PATH
