@@ -4,7 +4,7 @@ packages:
 - '.'
 
 extra-deps:
-  - biofasta-0.1.0.0
+  - biofasta-0.0.1@sha256:434be9dbdd947618b4894acc5d0b0a5efd97312d93495c68defcb0ebd51b9b6e,747
 
 flags: {}
 
